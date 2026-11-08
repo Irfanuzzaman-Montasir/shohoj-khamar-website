@@ -65,7 +65,7 @@ Open http://localhost:3000. Configure the Supabase values in `.env.local` before
 ### Deploy with Vercel and publish to search
 
 1. Push this repository to GitHub and import it into Vercel.
-2. Add `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, and `NEXT_PUBLIC_SITE_URL` in Vercel's environment settings. Set the site URL to the production domain, such as `https://example.com`.
+2. Add `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_ANON_KEY`, `NEXT_PUBLIC_SITE_URL`, and `NEXT_PUBLIC_GA_MEASUREMENT_ID` in Vercel's environment settings. Set the site URL to the production domain, such as `https://example.com`, and use the GA4 web stream ID that starts with `G-`.
 3. Deploy, then check `https://your-domain/robots.txt` and `https://your-domain/sitemap.xml`.
 4. Verify the site in Google Search Console and submit the sitemap. Search engines decide whether and when to index pages; rankings cannot be guaranteed.
 5. Public pages allow search crawlers, including `OAI-SearchBot`; do not block it in hosting or CDN firewall rules if you want ChatGPT search discovery.

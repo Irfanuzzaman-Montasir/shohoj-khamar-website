@@ -4,6 +4,9 @@ import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { canonicalAlternates, siteBaseUrl } from "@/lib/seo";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { GoogleAnalytics } from "@next/third-parties/google";
+
+const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
 
 const notoSansBengali = Noto_Sans_Bengali({
   weight: ["400", "500", "600", "700"],
@@ -32,6 +35,9 @@ export const metadata: Metadata = {
   applicationName: "Shohoj Khamar",
   authors: [{ name: "Shohoj Khamar" }],
   alternates: canonicalAlternates("/"),
+  verification: {
+    google: "wF4uHVM8ZKUJc_1Uy5F3HVyBagJr_886M_EM85HOw3Y",
+  },
   openGraph: {
     type: "website",
     siteName: "Shohoj Khamar",
@@ -69,6 +75,7 @@ export default function RootLayout({
         ) : null}
         <LanguageProvider>{children}</LanguageProvider>
         <SpeedInsights />
+        {gaMeasurementId ? <GoogleAnalytics gaId={gaMeasurementId} /> : null}
       </body>
     </html>
   );
