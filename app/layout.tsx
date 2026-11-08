@@ -3,6 +3,7 @@ import { Noto_Sans_Bengali, Inter } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/context/LanguageContext";
 import { canonicalAlternates, siteBaseUrl } from "@/lib/seo";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const notoSansBengali = Noto_Sans_Bengali({
   weight: ["400", "500", "600", "700"],
@@ -67,6 +68,7 @@ export default function RootLayout({
           />
         ) : null}
         <LanguageProvider>{children}</LanguageProvider>
+        <SpeedInsights />
       </body>
     </html>
   );
