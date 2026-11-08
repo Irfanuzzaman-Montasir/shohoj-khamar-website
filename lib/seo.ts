@@ -1,6 +1,5 @@
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 const vercelProductionHost = process.env.VERCEL_PROJECT_PRODUCTION_URL?.trim();
-const candidateSiteUrl = configuredSiteUrl || (vercelProductionHost ? `https://${vercelProductionHost}` : undefined);
 
 function normalizedOrigin(value: string | undefined): string | undefined {
   if (!value) return undefined;
@@ -12,7 +11,24 @@ function normalizedOrigin(value: string | undefined): string | undefined {
   }
 }
 
-export const siteBaseUrl = normalizedOrigin(candidateSiteUrl);
+function isLocalOrigin(origin: string): boolean {
+  const hostname = new URL(origin).hostname;
+  return (
+    hostname === "localhost" ||
+    hostname.endsWith(".localhost") ||
+    hostname === "127.0.0.1" ||
+    hostname === "[::1]"
+  );
+}
+
+const configuredOrigin = normalizedOrigin(configuredSiteUrl);
+const vercelProductionOrigin = normalizedOrigin(
+  vercelProductionHost ? `https://${vercelProductionHost}` : undefined,
+);
+
+// Never publish local development URLs as canonicals or sitemap entries.
+export const siteBaseUrl =
+  configuredOrigin && !isLocalOrigin(configuredOrigin) ? configuredOrigin : vercelProductionOrigin;
 
 export function canonicalUrl(path: string): string | undefined {
   if (!siteBaseUrl) return undefined;
