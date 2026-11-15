@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import AdPlaceholder from "@/components/common/AdPlaceholder";
 import {
   Thermometer, Utensils, Droplets, CheckSquare, AlertTriangle, Syringe,
-  ArrowLeft, ArrowRight, ShieldAlert, BookOpen, Pill, Clock, Lightbulb,
+  ArrowLeft, ArrowRight, ShieldAlert, Pill, Clock, Lightbulb,
   Sparkles,
 } from "lucide-react";
 

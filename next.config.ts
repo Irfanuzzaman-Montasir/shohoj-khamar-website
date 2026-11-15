@@ -12,14 +12,6 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: supabaseImagePattern ? [supabaseImagePattern] : [],
   },
-  turbopack: {
-    rules: {
-      "*.css": {
-        loaders: ["@tailwindcss/turbopack"],
-        as: "*.css",
-      },
-    },
-  },
 };
 
 export default nextConfig;

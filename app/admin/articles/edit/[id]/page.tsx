@@ -15,7 +15,7 @@ export default function EditArticlePage() {
   useEffect(() => {
     if (!id) return;
     const fetchArticle = async () => {
-      const { data, error } = await supabase
+      const { data } = await supabase
         .from("blog_articles")
         .select("*")
         .eq("id", id)

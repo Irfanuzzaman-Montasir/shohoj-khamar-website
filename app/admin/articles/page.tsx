@@ -6,13 +6,9 @@ import { supabase } from "@/lib/supabaseClient";
 import {
   Plus,
   Search,
-  Filter,
   Edit3,
   Trash2,
   Eye,
-  CheckCircle,
-  Clock,
-  ArrowLeft,
 } from "lucide-react";
 
 export default function AdminArticlesListPage() {

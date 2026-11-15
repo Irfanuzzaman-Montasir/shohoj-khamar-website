@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
-import { Calendar, Edit3, Eye, ShieldCheck, Thermometer, Utensils } from "lucide-react";
+import { Edit3, Eye } from "lucide-react";
 
 export default function AdminGuidesPage() {
   const [stages, setStages] = useState<any[]>([]);

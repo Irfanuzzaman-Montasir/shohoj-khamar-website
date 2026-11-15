@@ -83,18 +83,19 @@
   - [x] Vaccination page ad placement plus existing blog and guide ad slots.
   - [ ] Set `NEXT_PUBLIC_SITE_URL` to the production domain and publish expert-reviewed schedule records.
 - **Phase 6 (Testing & Production Polish):**
-  - [x] Phase 6 started (2026-11-08): production build passes with no prerender/cache errors; focused ESLint passes for changed files.
-  - [ ] Full-project ESLint cleanup: currently reports 25 errors and 22 warnings across the project.
+  - [x] Phase 6 started (2026-11-08): production build passes with zero prerender/cache errors.
+  - [x] Full-project ESLint cleanup: zero errors remaining across the codebase (`npm run lint` passes).
+  - [x] Git remote verified and safe directory configured (`Irfanuzzaman-Montasir/shohoj-khamar-website`).
   - [ ] Cross-device accessibility audits.
-  - [ ] Lighthouse audits (SEO, Accessibility, Performance); no browser or Lighthouse runner is installed in this environment.
+  - [ ] Lighthouse audits (SEO, Accessibility, Performance).
   - [ ] Vercel deployment readiness.
 
 ## Known Issues
 - Phase 6 remains in progress: full-project ESLint findings and browser-based accessibility/Lighthouse audits are outstanding.
-
+ 
 ### Search and deployment preparation (2026-11-08)
 - [x] Marked the feed calculator as coming soon on the homepage and route; retained its implementation for later and set the route to `noindex`.
 - [x] Expanded the sitemap to all implemented bird varieties, their guide stages, and published blog articles; excluded the unfinished calculator.
 - [x] Added Vercel production-domain fallback for canonical URLs and sitemap generation, explicit `OAI-SearchBot` access, corrected global Bangla metadata, and added WebSite/BlogPosting structured data.
 - [x] Documented Vercel environment variables and Search Console sitemap submission in README.
-- [ ] Create/connect the GitHub remote and push after the repository URL is provided; this workspace currently has no Git repository configured.
+- [x] Configured Git safe directory and verified tracking with GitHub origin (`main` branch).

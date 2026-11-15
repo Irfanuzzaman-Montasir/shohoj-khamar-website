@@ -9,8 +9,6 @@ import {
   Save,
   CheckCircle,
   AlertCircle,
-  FileText,
-  Upload,
 } from "lucide-react";
 
 interface ArticleFormProps {
@@ -31,7 +29,7 @@ export default function ArticleForm({
     initialData?.category_slug || "quail"
   );
   const [excerptBn, setExcerptBn] = useState(initialData?.excerpt_bn || "");
-  const [excerptEn, setExcerptEn] = useState(initialData?.excerpt_en || "");
+  const [excerptEn] = useState(initialData?.excerpt_en || "");
   const [contentBn, setContentBn] = useState(
     Array.isArray(initialData?.content_bn)
       ? initialData.content_bn.join("\n\n")
@@ -95,7 +93,7 @@ export default function ArticleForm({
       const fileName = `${Date.now()}-${Math.random().toString(36).substring(2)}.${fileExt}`;
       const filePath = `articles/${fileName}`;
 
-      const { data, error } = await supabase.storage
+      const { error } = await supabase.storage
         .from("blog-images")
         .upload(filePath, file);
 

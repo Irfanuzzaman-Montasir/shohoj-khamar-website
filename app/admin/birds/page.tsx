@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
-import { Layers, Eye, CheckCircle2 } from "lucide-react";
+import { Eye } from "lucide-react";
 
 export default function AdminBirdsPage() {
   const [birds, setBirds] = useState<any[]>([]);

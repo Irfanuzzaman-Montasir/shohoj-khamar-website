@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import Link from "next/link";
 import { supabase } from "@/lib/supabaseClient";
-import { Syringe, Plus, Trash2, ShieldCheck, CheckCircle } from "lucide-react";
+import { Plus, Trash2 } from "lucide-react";
 
 export default function AdminVaccinesPage() {
   const [vaccines, setVaccines] = useState<any[]>([]);
