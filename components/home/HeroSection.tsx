@@ -62,14 +62,29 @@ export default function HeroSection({ imageUrl = "" }: { imageUrl?: string }) {
           <div className="lg:col-span-5 w-full">
             <div
               className="relative w-full h-[280px] sm:h-[340px] rounded-3xl bg-[#E5EDE5] border border-[#D5E1D5] flex flex-col items-center justify-center p-8 transition-transform hover:shadow-xs overflow-hidden"
-              style={imageUrl ? { backgroundImage: `linear-gradient(0deg, rgba(15,40,29,.62), rgba(15,40,29,0) 58%), url("${imageUrl}")`, backgroundSize: "cover", backgroundPosition: "center" } : undefined}
+              style={
+                imageUrl
+                  ? {
+                      backgroundImage: `linear-gradient(0deg, rgba(15,40,29,.62), rgba(15,40,29,0) 58%), url("${imageUrl}")`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                    }
+                  : undefined
+              }
               role={imageUrl ? "img" : undefined}
-              aria-label={imageUrl ? (language === "bn" ? "সহজ খামার হোমপেজের প্রধান ছবি" : "Shohoj Khamar homepage hero image") : undefined}
+              aria-label={
+                imageUrl
+                  ? language === "bn"
+                    ? "সহজ খামার হোমপেজের প্রধান ছবি"
+                    : "Shohoj Khamar homepage hero image"
+                  : undefined
+              }
             >
-              {!imageUrl && <div className="transform transition-transform hover:scale-105 duration-300"><BirdIllustration variant="active" width={112} height={94} /></div>}
-              <p className={`mt-6 text-xs sm:text-sm font-medium text-center tracking-wide ${imageUrl ? "absolute bottom-7 text-white drop-shadow" : "text-[#446050]"}`}>
-                {t("heroPlaceholderText")}
-              </p>
+              {!imageUrl && (
+                <div className="transform transition-transform hover:scale-105 duration-300">
+                  <BirdIllustration variant="active" width={128} height={108} />
+                </div>
+              )}
             </div>
           </div>
         </div>
